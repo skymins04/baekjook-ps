@@ -31,4 +31,4 @@ while True:
     mod = big % small
 
 #최소공배구 산출 파트
-print(int(a*b/small))
+print(int(a*b/small)) # 정수만 얻으면 되니 int로 형변환
