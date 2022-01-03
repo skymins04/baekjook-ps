@@ -20,4 +20,4 @@
 '''
 
 x, y, w, h = map(int, input().split()) # 표준 입출력 처리
-print(min([h-y,y,w-x,x])) # 직사각형의 각 변과 점 (x, y)간의 거리들 중 최소값을 출력
+print(min([h-y,y,w-x,x])) # 직사각형의 각 변과 점 (x, y)간의 거리들 중 최솟값을 출력
