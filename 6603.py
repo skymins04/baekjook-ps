@@ -18,22 +18,22 @@
         dfs를 이용하여 모든 조합을 탐색한다.
 '''
 
-while True:
-    arr = list(map(int, input().split()))
-    n = arr.pop(0)
-    if n == 0:
+while True: # 테스트케이스 반복
+    arr = list(map(int, input().split())) # 표준 입력 처리 - k, [...집합 S]
+    n = arr.pop(0) # arr의 첫번째 요소인 k 부분을 pop 하면서 n에 대입
+    if n == 0: # n이 0인 경우 반복 종료
         break
 
-    cases = []
-    def dfs(_i, _l):
-        if len(_l) == 6:
+    cases = [] # 조합 경우의 수를 저장할 리스트
+    def dfs(_i, _l): # dfs를 위한 함수 선언
+        if len(_l) == 6: # 조합의 길이가 6이 됐을 경우 cases에 추가
             cases.append(_l)
             return
-        for i in range(_i, n):
+        for i in range(_i, n): # 조합 길이가 6이 아닐 경우, 재귀 호출
             dfs(i+1, _l+[arr[i]])
 
-    dfs(0, [])
-    for i in cases:
+    dfs(0, []) # 탐색 시작
+    for i in cases: # 탐색 결과 출력
         for j in range(len(i)):
             print(i[j], end=' ')
         print()
