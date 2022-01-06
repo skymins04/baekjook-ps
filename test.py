@@ -1,12 +1,9 @@
-T=int(input())
-for t in range(T):
-    N,M=map(int, input().split())
-    numerator = M
-    denominator = N
-    if N==M:
-        print(1)
-    else:
-        for i in range(1, N):
-            numerator *= M-i
-            denominator *= N-i
-        print(int(numerator/denominator))
+arr=input().split('-')
+min = 0
+for i in arr[0].split('+'):
+    min += int(i.lstrip('0'))
+arr.pop(0)
+for i in arr:
+    for j in i.split('+'):
+        min -= int(j.lstrip('0'))
+print(min)
